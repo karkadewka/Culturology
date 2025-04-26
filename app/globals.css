@@ -1,0 +1,272 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Стили для приложения */
+@layer components {
+  .app-container {
+    @apply min-h-screen flex flex-col;
+  }
+
+  .onboarding-screen {
+    @apply flex flex-col h-screen p-6 bg-heritage-background;
+  }
+
+  .heritage-logo {
+    @apply flex justify-center;
+  }
+
+  .heritage-logo-icon {
+    @apply w-20 h-20;
+  }
+
+  .nav-buttons {
+    @apply flex justify-between mt-auto;
+  }
+
+  .auth-form {
+    @apply space-y-4 mt-6;
+  }
+
+  .social-login {
+    @apply flex justify-center gap-4;
+  }
+
+  .social-button {
+    @apply w-12 h-12 rounded-full bg-white flex items-center justify-center shadow;
+  }
+
+  .monument-silhouette {
+    @apply mt-auto;
+  }
+
+  .verification-code {
+    @apply flex justify-center gap-4 mt-8;
+  }
+
+  .code-input {
+    @apply w-12 h-12 border border-heritage-primary rounded-md flex items-center justify-center text-xl font-bold;
+  }
+
+  .home-screen {
+    @apply flex flex-col h-screen bg-heritage-background;
+  }
+
+  .search-bar {
+    @apply flex items-center p-4 bg-white rounded-full shadow m-4;
+  }
+
+  .category-tabs {
+    @apply flex overflow-x-auto p-2 gap-2;
+  }
+
+  .category-tab {
+    @apply px-4 py-2 rounded-full text-sm whitespace-nowrap;
+  }
+
+  .category-tab.active {
+    @apply bg-heritage-primary text-white;
+  }
+
+  .monument-card {
+    @apply bg-white rounded-lg shadow overflow-hidden m-4;
+  }
+
+  .monument-image {
+    @apply w-full h-48 object-cover;
+  }
+
+  .monument-info {
+    @apply p-4;
+  }
+
+  .monument-title {
+    @apply text-lg font-semibold;
+  }
+
+  .monument-location {
+    @apply text-sm text-heritage-primary flex items-center mt-1;
+  }
+
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 bg-white border-t flex justify-around py-2 px-4;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center;
+  }
+
+  .nav-item span {
+    @apply text-xs mt-1;
+  }
+}
+
+import type { Config } from "tailwindcss";
+
+const config = {
+  mode: "jit", // Включаем Just-In-Time компиляцию
+  darkMode: ["class"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
+  ],
+  prefix: "",
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
+    extend: {
+      colors: {
+        heritage: {
+          background: "#ece6c2",
+          primary: "#6f5643",
+          secondary: "#d2a24c",
+          accent: "#b96936",
+          dark: "#273b4a",
+          light: "#fffdee",
+          muted: "#d9d9d9",
+        },
+        // Добавляем кастомные цвета
+        custom: {
+          background: "#ece6c2",
+          text: "#000",
+        },
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+    },
+  },
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
+
+export default config;
