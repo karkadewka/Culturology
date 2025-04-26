@@ -1,6 +1,7 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
-const config = {
+const config: Config = {
+  mode: "jit",
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -28,6 +29,10 @@ const config = {
           dark: "#273b4a",
           light: "#fffdee",
           muted: "#d9d9d9",
+        },
+        custom: {
+          background: "#ece6c2",
+          text: "#000",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -85,6 +90,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+};
 
-export default config
+export default config;
