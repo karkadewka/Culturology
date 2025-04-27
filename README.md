@@ -1,30 +1,49 @@
-# Recreate Figma UI
+# Culturology
+**Culturology**— это веб-приложение, которое позволяет пользователям узнавать о культурах малоизвестных народов мира.  
+Вдохновением для проекта послужил сайт [Jimmy Nelson - Stories](https://www.jimmynelson.com/stories/the-kazakh-people/).
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+🚀 Установка и запуск
+1. Клонируйте репозиторий:
+   git clone https://github.com/karkadewka/Culturology.git
+2. Установите зависимости:
+   npm install
+   markdown
+3. Запустите приложение локально:
+   npm run dev
+   markdown
+   
+## Процесс проектирования и разработки
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/karkadewka-gmailcoms-projects/v0-recreate-figma-ui)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/JArnnhSGcgW)
+- Создана структура проекта с использованием **Next.js** и **Tailwind CSS**.
+- Реализован простой и понятный пользовательский интерфейс для изучения культур.
+- Основное внимание уделено адаптивности и минимализму.
 
-## Overview
+## Уникальные подходы и методологии
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+- Использование собственного API через серверную часть (Next.js API routes).
+- Кастомные стили через Tailwind CSS без сторонних UI-библиотек.
+- Структурированная архитектура для легкой масштабируемости проекта.
 
-## Deployment
+## Принятые компромиссы
 
-Your project is live at:
+- Упрощены некоторые элементы дизайна для ускорения разработки MVP.
+- Использована статическая информация для начальной версии без подключения внешних баз данных.
 
-**[https://vercel.com/karkadewka-gmailcoms-projects/v0-recreate-figma-ui](https://vercel.com/karkadewka-gmailcoms-projects/v0-recreate-figma-ui)**
+## Известные ошибки и ограничения
 
-## Build your app
+- На данный момент нет полноценных анимаций при переходах между страницами.
+- Отсутствует полноценная база данных для хранения контента — информация статична.
+- Были проблемы с интеграцией анимационной карты в виде сферы Земли, что не удалось реализовать на текущий момент.
 
-Continue building your app on:
+## Выбор технического стека
 
-**[https://v0.dev/chat/projects/JArnnhSGcgW](https://v0.dev/chat/projects/JArnnhSGcgW)**
+- **Next.js** — для серверного рендеринга и создания API-роутов.
+- **Tailwind CSS** — для быстрого и гибкого стилизации.
+- **Vercel** — для деплоя благодаря быстрой интеграции и стабильности.
 
-## How It Works
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## Демо
+
+Проект доступен онлайн:  
+
+[https://culturology-webapp-an.app](https://culturology-webapp-an.app) как тебе мой текст 
