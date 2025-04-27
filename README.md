@@ -46,4 +46,4 @@
 
 Проект доступен онлайн:  
 
-[https://culturology-webapp-an.app](https://culturology-webapp-an.app)
+([https://culturology-webapp-an.app](https://culturology.vercel.app/))
